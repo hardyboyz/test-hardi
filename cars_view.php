@@ -5,6 +5,10 @@
  th, td{
    text-align:center;
  }
+
+ .highlight {
+   background-color: #c0c0c0;
+ }
 </style>
 
 <div>
@@ -18,7 +22,7 @@ Price Year : <input type="text" name="year" id="year"><button type="button" oncl
   <th rowspan="2" style="vertical-align:middle;"> Car Name </th>
   <th colspan="3"> Years </th></tr>
   <?php foreach($years as $y){
-          $highlight = $y == $search ? 'style="background-color:#c0c0c0"' : '';
+          $highlight = $y == $search ? 'class="highlight"' : '';
           echo '<th '.$highlight.'>'.$y.'</th>';   
           }
   ?>
@@ -29,7 +33,7 @@ foreach($data as $c){
   echo '<tr>
         <td>'.$c['car_name'].'</td>';   
         foreach($years as $y){
-          $highlight = $y == $search ? 'style="background-color:#c0c0c0"' : '';
+          $highlight = $y == $search ? 'class="highlight"' : '';
           echo '<td '.$highlight.'>'.$c[$y].'</td>';   
         } 
   echo '</tr>';
